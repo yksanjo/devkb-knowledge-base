@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* StackForge Design Tokens */
+@layer base {
+  :root {
+    /* Colors */
+    --forge-50: 239 246 255;
+    --forge-100: 219 234 254;
+    --forge-200: 191 219 254;
+    --forge-300: 147 197 253;
+    --forge-400: 96 165 250;
+    --forge-500: 59 130 246;
+    --forge-600: 37 99 235;
+    --forge-700: 29 78 216;
+    --forge-800: 30 64 175;
+    --forge-900: 30 58 138;
+
+    --navy-50: 248 250 252;
+    --navy-100: 241 245 249;
+    --navy-200: 226 232 240;
+    --navy-300: 203 213 225;
+    --navy-400: 148 163 184;
+    --navy-500: 100 116 139;
+    --navy-600: 71 85 105;
+    --navy-700: 51 65 85;
+    --navy-800: 30 41 59;
+    --navy-900: 15 23 42;
+    --navy-950: 2 6 23;
+
+    /* Tool Accents */
+    --featureflag: 249 115 22;
+    --webhook: 34 197 94;
+    --database: 168 85 247;
+    --gateway: 59 130 246;
+    --audit: 239 68 68;
+
+    /* Semantic */
+    --background: var(--navy-950);
+    --foreground: var(--navy-50);
+    --primary: var(--forge-600);
+    --primary-foreground: 255 255 255;
+    --secondary: var(--navy-800);
+    --secondary-foreground: var(--navy-50);
+    --muted: var(--navy-800);
+    --muted-foreground: var(--navy-400);
+    --border: var(--navy-800);
+    --input: var(--navy-800);
+    --ring: var(--forge-600);
+    --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  /* Card Component */
+  .sf-card {
+    @apply bg-navy-900/50 border border-navy-800 rounded-xl;
+  }
+
+  .sf-card-hover {
+    @apply sf-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-navy-700;
+  }
+
+  /* Button Base */
+  .sf-btn {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forge-500 focus:ring-offset-2 focus:ring-offset-navy-950 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .sf-btn-primary {
+    @apply sf-btn bg-forge-600 hover:bg-forge-500 text-white border-transparent;
+  }
+
+  .sf-btn-secondary {
+    @apply sf-btn bg-navy-800 hover:bg-navy-700 text-white border-transparent;
+  }
+
+  .sf-btn-outline {
+    @apply sf-btn bg-transparent hover:bg-navy-800 text-navy-200 border border-navy-700;
+  }
+
+  .sf-btn-ghost {
+    @apply sf-btn bg-transparent hover:bg-navy-800 text-navy-300 border-transparent;
+  }
+
+  /* Input */
+  .sf-input {
+    @apply w-full px-4 py-2.5 bg-navy-900 border border-navy-700 rounded-lg text-white placeholder:text-navy-500 focus:outline-none focus:ring-2 focus:ring-forge-500 focus:border-transparent transition-all;
+  }
+
+  /* Badge */
+  .sf-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .sf-badge-primary {
+    @apply sf-badge bg-forge-500/10 text-forge-400 border border-forge-500/20;
+  }
+
+  .sf-badge-success {
+    @apply sf-badge bg-green-500/10 text-green-400 border border-green-500/20;
+  }
+
+  .sf-badge-warning {
+    @apply sf-badge bg-amber-500/10 text-amber-400 border border-amber-500/20;
+  }
+
+  .sf-badge-error {
+    @apply sf-badge bg-red-500/10 text-red-400 border border-red-500/20;
+  }
+}
+
+@layer utilities {
+  /* Gradient Text */
+  .sf-gradient-text {
+    @apply bg-gradient-to-r from-forge-400 via-purple-400 to-teal-400 bg-clip-text text-transparent;
+  }
+
+  /* Glow Effects */
+  .sf-glow-blue {
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.3);
+  }
+
+  .sf-glow-purple {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Animation */
+  .sf-animate-in {
+    animation: sfAnimateIn 0.5s ease-out forwards;
+  }
+
+  @keyframes sfAnimateIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

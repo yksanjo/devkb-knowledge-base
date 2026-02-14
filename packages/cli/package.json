@@ -1,0 +1,33 @@
+{
+  "name": "@devkb/cli",
+  "version": "1.0.0",
+  "description": "CLI tool for DevKB - Developer Knowledge Base",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "devkb": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@devkb/shared": "*",
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5",
+    "glob": "^10.3.10",
+    "fs-extra": "^11.2.0",
+    "dotenv": "^16.3.1",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.6",
+    "@types/commander": "^2.12.2",
+    "@types/inquirer": "^8.2.10",
+    "@types/fs-extra": "^11.0.4"
+  }
+}

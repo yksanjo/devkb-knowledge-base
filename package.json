@@ -1,0 +1,38 @@
+{
+  "name": "devkb",
+  "version": "1.0.0",
+  "description": "Developer Knowledge Base - Personal or team knowledge management system",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace=@devkb/api",
+    "dev:web": "npm run dev --workspace=@devkb/web",
+    "dev:cli": "npm run dev --workspace=@devkb/cli",
+    "dev:ide": "npm run dev --workspace=@devkb/ide-plugin",
+    "build": "npm run build --workspaces",
+    "build:api": "npm run build --workspace=@devkb/api",
+    "build:web": "npm run build --workspace=@devkb/web",
+    "build:cli": "npm run build --workspace=@devkb/cli",
+    "build:ide": "npm run build --workspace=@devkb/ide-plugin",
+    "cli": "npm run start --workspace=@devkb/cli",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "keywords": [
+    "knowledge-base",
+    "developer-tools",
+    "documentation",
+    "codebase-search"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
